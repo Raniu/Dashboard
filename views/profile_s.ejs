@@ -1,0 +1,158 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <title>Dash</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/css/ionicons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> <!--CDN 링크 --> 
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/profile_s.css">
+    <link rel="stylesheet" href="/css/profile.css">
+
+</head>
+
+<body>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">LOGO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="/blog.html" class="nav-link">BLOG</a></li>
+                    <li class="nav-item">
+                        <a href="/search.html" class="nav-link"><i class="fas fa-search"></i></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/cart" class="nav-link"><i class="fas fa-heart"></i></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/profiles" class="nav-link"><i class="fas fa-user-circle fa-lg"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+
+    <div class="hero-wrap js-fullheight" >
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters js-fullheight align-items-center justify-content-start" data-scrollax-parent="true" style="padding-top:120px">
+                <div class="container emp-profile">
+                    <form method="post">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="profile-img" >
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                                    <div class="file btn btn-lg btn-primary">
+                                        Change Photo<input type="file" name="file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="profile-head">
+                                    <h5><%=user.name %></h5>
+                                    <p class="proile-rating">Today is</br>  
+                                        <spa/n id="year"></spa>
+                                        <spa/n class="point">.</spa>
+                                        <spa/n id="month"></spa>
+                                        <spa/n class="point">.</spa>
+                                        <spa/n id="date"></spa>
+                                        <spa/n id="day"></spa>
+                                    </p>        
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4" style="padding-top: 5%;">
+                                <nav class="list-group">
+                                    <a class="list-group-item active" href="/profiles"><i class="fa fa-user"></i>Profile</a>
+                                    <a class="list-group-item with-badge" href="/users"><i class="fa fa-heart"></i>Wishlist<span class="badge badge-primary badge-pill">3</span></a>
+                                    <a class="list-group-item with-badge" href="#"><i class="fa fa-tag"></i>Best routes<span class="badge badge-primary badge-pill">4</span></a>
+                                    <a class="list-group-item" href="/logout"><i class="fa fa-user-circle"></i>Logout</a>
+                                    
+                                </nav>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="tab-content profile-tab" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row"></div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><%=user.name %></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><%=user.email %></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><%=user.telephone %></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>           
+                </div>
+            </div>   
+        </div> 
+    </div>  
+    <script>
+        let clockStart = setInterval(function() {
+            let today = new Date()
+            let dayList = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+    
+            let YY = today.getFullYear()
+            let MM = today.getMonth()+1
+            let DD = today.getDate()
+            let dd = dayList[today.getDay()].toUpperCase()
+
+            document.getElementById('month').innerText = MM
+            document.getElementById('date').innerText = DD
+            document.getElementById('year').innerText = YY
+            document.getElementById('day').innerText = dd
+        }, 1000)
+    </script>        
+</body>
+
+
